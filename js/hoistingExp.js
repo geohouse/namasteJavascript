@@ -19,6 +19,12 @@ function getName() {
 
 let getName2 = function () {
   console.log("getName2");
+  function getNameNested() {
+    console.log("getNameNested");
+  }
+  // When the getNameNested function runs, because it's nested, it's on the top of the call stack, with getName2 below it and the
+  // the global execution context below that.
+  getNameNested();
 };
 
 let getName3 = () => {
